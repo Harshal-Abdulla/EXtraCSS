@@ -15,30 +15,147 @@ div.container {
 }
 
 div.container div.ball{
-    width :100px;
-    height: 100px;
+    width :50px;
+    height:50px;
     background-color: blue;
+    margin: 20px;
+    border-radius: 10px;
 
 }
-/* div.container div.ball:hover{
-    border-radius: 50%;
-    cursor: pointer;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-}
-    /* go to dev tool and play around with ease tool and set the desired bessiere curve copy and paste to our code  */
 
-
-/* div.container div.ball:hover{
-    transform: scale(2); 
-    /* this will scale up by twice, rotate will rotate as per given degree like rotate(60deg) */
-/*
-    cursor: pointer;
-    background-color: darkblue;
-} */
 
 div.container:hover div.ball{
-    cursor:crosshair;
-    transform: translateX(400px);
-    background-color: chartreuse;
+    
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+/*for animations there is no default name so we want to specify the name explicitily
+
+ transistion properties are applie on the elements while animations are applied on the effect like hover
+
+ animations-fill-mode : forwads makes it stop at the last state otherwise it will retain the position
+
+ iterations counts make the animation never stop in infinnite, we can make it as many number of times we want like 2 cycles
+ 
+ animations delay makes it delay after we hover and the will animate
+ 
+ checkout freecodecamp
+ 
+ */
+div.ball:nth-child(1){
+    animation-delay: 0.5s;
+    animation-name: stylish-rotate;
+    animation-duration: 3s;
+}
+ div.ball:nth-child(2){
+     animation-delay: 1s;
+     animation-name: bounce;
+     animation-duration: 3s;
+ }
+ div.ball:nth-child(3){
+     animation-delay: 1.5s;
+     animation-name: stylish-rotate;
+     animation-duration: 3s;
+ }
+ div.ball:nth-child(4){
+     animation-delay: 2s;
+     animation-name: bounce1;
+     animation-duration: 3s;
+ }
+ div.ball:nth-child(5){
+     animation-delay: 2.5s;
+     animation-name: stylish-rotate;
+     animation-duration: 3s;
+ }
+
+@keyframes stylish-rotate{
+
+    0%{
+        background-color: violet;
+    }
+    15%{
+        background-color: indigo;
+    }
+    30%{
+        background-color: blue;
+    }
+    40%{
+        background-color: green;
+    }
+    50%{
+        background-color: yellow;
+    }
+    65%{
+        background-color: orange;
+    }
+    85%{
+        background-color: red;
+    }
+    100%{
+        transform: rotateZ(360deg);
+        background-color:blue;
+    }
+}
+@keyframes bounce{
+    0%{
+        background-color: violet;
+        transform: translateY(0px);
+    }
+    15%{
+        background-color: indigo;
+        transform: translateY(33px);
+    }
+    30%{
+        background-color: blue;
+        transform: translateY(66px);
+    }
+    50%{
+        background-color: yellow;
+        transform: translateY(100px);
+
+    }
+    65%{
+        background-color: orange;
+        transform: translateY(66px);
+    }
+    85%{
+        background-color: red;
+        transform: translateY(33px);
+    }
+    100%{
+        transform: translateY(0px);
+        background-color:blue;
+    }
+}
+@keyframes bounce1{
+    0%{
+        background-color: violet;
+        transform: translateY(0px);
+    }
+    15%{
+        background-color: indigo;
+        transform: translateY(-33px);
+    }
+    30%{
+        background-color: blue;
+        transform: translateY(-66px);
+    }
+    50%{
+        background-color: yellow;
+        transform: translateY(-100px);
+
+    }
+    65%{
+        background-color: orange;
+        transform: translateY(-66px);
+    }
+    85%{
+        background-color: red;
+        transform: translateY(-33px);
+    }
+    100%{
+        transform: translateY(-0px);
+        background-color:blue;
+    }
 }
