@@ -1,0 +1,44 @@
+/* transition can be done only to starting and ending if we want to do every frame it is animation */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    /* anything in done in the justify content is done in main axis and anyhting done in the align items is done in the secondary axis here defsult axis is x, so align items will be done in the y axis */
+    height: 50vh;
+    background-color: black;
+}
+
+div.container div.ball{
+    width :100px;
+    height: 100px;
+    background-color: blue;
+
+}
+/* div.container div.ball:hover{
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+    /* go to dev tool and play around with ease tool and set the desired bessiere curve copy and paste to our code  */
+
+
+/* div.container div.ball:hover{
+    transform: scale(2); 
+    /* this will scale up by twice, rotate will rotate as per given degree like rotate(60deg) */
+/*
+    cursor: pointer;
+    background-color: darkblue;
+} */
+
+div.container:hover div.ball{
+    cursor:crosshair;
+    transform: translateX(400px);
+    background-color: chartreuse;
+}
