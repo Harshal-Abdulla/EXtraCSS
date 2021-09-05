@@ -1,162 +1,46 @@
-/* transition can be done only to starting and ending if we want to do every frame it is animation */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+div.child{
+    width: 100px;
+    height: 100px;
+    background-color: blue;}
+div.child:hover{
+    background-color: blueviolet;
 }
-
-div.container {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    /* anything in done in the justify content is done in main axis and anyhting done in the align items is done in the secondary axis here defsult axis is x, so align items will be done in the y axis */
-    height: 50vh;
-    background-color: black;
+input:focus{
+    background-color: crimson !important;
 }
-
-div.container div.ball{
-    width :50px;
-    height:50px;
-    background-color: blue;
-    margin: 20px;
-    border-radius: 10px;
-
+/*impotant overwrites any styles*/
+/*click*/
+div::selection{
+    background-color: cyan;
+    color: darkgray;
 }
-
-
-div.container:hover div.ball{
-    
-    animation-fill-mode: forwards;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-}
-/*short hand for animations : name duration timing fuction iterstion count;*/
-/*for animations there is no default name so we want to specify the name explicitily
-
- transistion properties are applie on the elements while animations are applied on the effect like hover
-
- animations-fill-mode : forwads makes it stop at the last state otherwise it will retain the position
-
- iterations counts make the animation never stop in infinnite, we can make it as many number of times we want like 2 cycles
+/*highlighting by selecting becomes aqua
+and color to grey*/
  
- animations delay makes it delay after we hover and the will animate
- 
- checkout freecodecamp
- 
+li{
+    list-style: none;
+    font-size: 4rem;
+}
+/* li::before{
+    content: "check this out";
+    color: darkgreen;
+    font-size: 1rem;
+}
+li::after{
+    content: "check this out";
+    color: red;
+    font-size: 1rem;
+}
+style none makes the bulletin gone, before and after helps to add content from css and doesnt allow to select , but allows to style independently
  */
-div.ball:nth-child(1){
-    animation-delay: 0.5s;
-    animation-name: stylish-rotate;
-    animation-duration: 3s;
+li::after{
+    content: '';
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50px;
+    right: 10px;
+    top: 30px;
 }
- div.ball:nth-child(2){
-     animation-delay: 1s;
-     animation-name: bounce;
-     animation-duration: 3s;
- }
- div.ball:nth-child(3){
-     animation-delay: 1.5s;
-     animation-name: stylish-rotate;
-     animation-duration: 3s;
- }
- div.ball:nth-child(4){
-     animation-delay: 2s;
-     animation-name: bounce1;
-     animation-duration: 3s;
- }
- div.ball:nth-child(5){
-     animation-delay: 2.5s;
-     animation-name: stylish-rotate;
-     animation-duration: 3s;
- }
-
-@keyframes stylish-rotate{
-
-    0%{
-        background-color: violet;
-    }
-    15%{
-        background-color: indigo;
-    }
-    30%{
-        background-color: blue;
-    }
-    40%{
-        background-color: green;
-    }
-    50%{
-        background-color: yellow;
-    }
-    65%{
-        background-color: orange;
-    }
-    85%{
-        background-color: red;
-    }
-    100%{
-        transform: rotateZ(360deg);
-        background-color:blue;
-    }
-}
-@keyframes bounce{
-    0%{
-        background-color: violet;
-        transform: translateY(0px);
-    }
-    15%{
-        background-color: indigo;
-        transform: translateY(33px);
-    }
-    30%{
-        background-color: blue;
-        transform: translateY(66px);
-    }
-    50%{
-        background-color: yellow;
-        transform: translateY(100px);
-
-    }
-    65%{
-        background-color: orange;
-        transform: translateY(66px);
-    }
-    85%{
-        background-color: red;
-        transform: translateY(33px);
-    }
-    100%{
-        transform: translateY(0px);
-        background-color:blue;
-    }
-}
-@keyframes bounce1{
-    0%{
-        background-color: violet;
-        transform: translateY(0px);
-    }
-    15%{
-        background-color: indigo;
-        transform: translateY(-33px);
-    }
-    30%{
-        background-color: blue;
-        transform: translateY(-66px);
-    }
-    50%{
-        background-color: yellow;
-        transform: translateY(-100px);
-
-    }
-    65%{
-        background-color: orange;
-        transform: translateY(-66px);
-    }
-    85%{
-        background-color: red;
-        transform: translateY(-33px);
-    }
-    100%{
-        transform: translateY(-0px);
-        background-color:blue;
-    }
-}
+/*its like add a div but using a ss an empty content will create a block*/
