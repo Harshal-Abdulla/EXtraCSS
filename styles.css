@@ -30,6 +30,7 @@ div.container:hover div.ball{
     animation-timing-function: ease;
     animation-iteration-count: infinite;
 }
+/*short hand for animations : name duration timing fuction iterstion count;*/
 /*for animations there is no default name so we want to specify the name explicitily
 
  transistion properties are applie on the elements while animations are applied on the effect like hover
